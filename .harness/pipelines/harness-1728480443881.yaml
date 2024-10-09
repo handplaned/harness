@@ -20,16 +20,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: build_java_app
-                  name: Build
-                  spec:
-                    shell: Sh
-                    command: |-
-                      echo "Welcome to Harness CI"
-                      mvn -B package --file pom.xml
-                  timeout: ""
-                  type: Run
-              - step:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
