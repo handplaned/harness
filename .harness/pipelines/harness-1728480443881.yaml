@@ -20,14 +20,15 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: BuildAndPushDockerRegistry
-                  name: BuildAndPushDockerRegistry_2
-                  identifier: BuildAndPushDockerRegistry_2
+                  type: Run
+                  name: build
+                  identifier: build
                   spec:
-                    connectorRef: docker_harness
-                    repo: handplaned/harness
-                    tags:
-                      - newest
+                    connectorRef: account.harnessImage
+                    image: maven:3.8-jdk-11
+                    shell: Sh
+                    command: |
+                      mvn clean package dependency:copy-dependencies
           platform:
             os: Linux
             arch: Amd64
