@@ -29,6 +29,15 @@ pipeline:
                     shell: Sh
                     command: |
                       mvn clean package dependency:copy-dependencies
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: docker_harness
+                    repo: handplaned/harness
+                    tags:
+                      - newest
           platform:
             os: Linux
             arch: Amd64
