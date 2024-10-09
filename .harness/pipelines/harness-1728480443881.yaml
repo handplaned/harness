@@ -15,7 +15,8 @@ pipeline:
         name: build
         spec:
           caching:
-            enabled: false
+            enabled: true
+            paths: []
           cloneCodebase: true
           execution:
             steps:
@@ -35,7 +36,7 @@ pipeline:
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: docker_harness
-                    repo: handplaned/test
+                    repo: handplaned/harness
                     tags:
                       - "10924"
           platform:
@@ -44,4 +45,7 @@ pipeline:
           runtime:
             type: Cloud
             spec: {}
+          buildIntelligence:
+            enabled: false
         type: CI
+        description: ""
