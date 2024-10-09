@@ -38,7 +38,7 @@ pipeline:
                     connectorRef: docker_harness
                     repo: handplaned/harness
                     tags:
-                      - "10924"
+                      - handplaned
           platform:
             os: Linux
             arch: Amd64
