@@ -20,10 +20,13 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: echo
-                  name: echo
+                  identifier: build_java_app
+                  name: Build
                   spec:
-                    command: echo hello world
+                    shell: Sh
+                    command: |-
+                      echo "Welcome to Harness CI"
+                      mvn -B package --file pom.xml
                   timeout: ""
                   type: Run
               - step:
