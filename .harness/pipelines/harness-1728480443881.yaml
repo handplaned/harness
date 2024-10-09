@@ -30,6 +30,15 @@ pipeline:
                     caching: true
                   timeout: ""
                   type: BuildAndPushDockerRegistry
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_2
+                  identifier: BuildAndPushDockerRegistry_2
+                  spec:
+                    connectorRef: docker_harness
+                    repo: handplaned/harness
+                    tags:
+                      - newest
           platform:
             os: Linux
             arch: Amd64
