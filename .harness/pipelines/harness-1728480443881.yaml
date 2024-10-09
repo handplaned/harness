@@ -33,7 +33,7 @@ pipeline:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
-                    connectorRef: harness
+                    connectorRef: docker_harness
                     repo: handplaned/harness
                     tags:
                       - latest
