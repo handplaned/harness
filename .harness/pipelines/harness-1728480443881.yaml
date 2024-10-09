@@ -20,17 +20,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: dockerbuild
-                  name: docker_build
-                  spec:
-                    connectorRef: docker_harness
-                    repo: handplaned/harness
-                    tags:
-                      - latest
-                    caching: true
-                  timeout: ""
-                  type: BuildAndPushDockerRegistry
-              - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_2
                   identifier: BuildAndPushDockerRegistry_2
