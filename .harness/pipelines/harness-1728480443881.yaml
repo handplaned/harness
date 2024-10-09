@@ -35,9 +35,9 @@ pipeline:
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: docker_harness
-                    repo: handplaned/harness
+                    repo: handplaned/test
                     tags:
-                      - newest
+                      - "10924"
           platform:
             os: Linux
             arch: Amd64
